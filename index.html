@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TORERUN | 補助金等取り放題サービス - HJP Corporation</title>
+  <meta name="description" content="中小企業の補助金申請を月額定額でフルサポート。TORERUN3・TORERUN5で年間200〜500万円の機会損失を防ぎます。採択率69%、2,000件以上の実績。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --navy: #0f1b3d;
+      --navy-light: #1a2d5a;
+      --navy-mid: #253a6e;
+      --gold: #c9a13b;
+      --gold-light: #e8c96a;
+      --gold-dark: #a8852e;
+      --white: #ffffff;
+      --gray-50: #f8f9fc;
+      --gray-100: #eef0f5;
+      --gray-200: #d1d5e0;
+      --gray-600: #6b7280;
+      --gray-800: #1f2937;
+      --accent: #3b82f6;
+      --success: #10b981;
+      --red: #ef4444;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(15, 27, 61, .12);
+      --shadow-lg: 0 12px 48px rgba(15, 27, 61, .18);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      line-height: 1.3
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      text-align: center;
+      margin-bottom: 12px
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+      font-size: .95rem
+    }
+
+    .gold-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin: 0 auto 16px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      border: none
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      box-shadow: 0 4px 20px rgba(201, 161, 59, .4)
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 161, 59, .5)
+    }
+
+    .btn-outline {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--navy)
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: .7s ease
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 161, 59, .12) 0%, transparent 70%);
+      border-radius: 50%
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, .08) 0%, transparent 70%);
+      border-radius: 50%
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 20px;
+      border: 1px solid rgba(201, 161, 59, .5);
+      border-radius: 50px;
+      font-size: .8rem;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+      letter-spacing: .1em
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 16px;
+      font-weight: 900
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255, 255, 255, .8);
+      max-width: 640px;
+      margin: 0 auto 16px
+    }
+
+    .hero-stat {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      margin: 24px 0
+    }
+
+    .hero-stat small {
+      font-size: .5em;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 500
+    }
+
+    .hero-cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    /* PROBLEM */
+    .problem {
+      padding: 80px 24px;
+      background: var(--gray-50)
+    }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px
+    }
+
+    .problem-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--red);
+      text-align: center
+    }
+
+    .problem-card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px
+    }
+
+    .problem-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px
+    }
+
+    .problem-card p {
+      color: var(--gray-600);
+      font-size: .9rem
+    }
+
+    /* SERVICE */
+    .service {
+      padding: 80px 24px
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: .3s;
+      border: 1px solid var(--gray-100)
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold)
+    }
+
+    .service-card .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--gold-light);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 16px
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px
+    }
+
+    .service-card p {
+      color: var(--gray-600);
+      font-size: .85rem
+    }
+
+    /* COMPARE */
+    .compare {
+      padding: 80px 24px;
+      background: var(--gray-50)
+    }
+
+    .plan-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto
+    }
+
+    .plan-box {
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      position: relative;
+      transition: .3s;
+      overflow: hidden
+    }
+
+    .plan-box.basic {
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      box-shadow: var(--shadow)
+    }
+
+    .plan-box.premium {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      box-shadow: var(--shadow-lg)
+    }
+
+    .plan-box.premium .plan-price small,
+    .plan-box.premium .plan-feat li {
+      color: rgba(255, 255, 255, .8)
+    }
+
+    .plan-label {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 16px
+    }
+
+    .plan-box.basic .plan-label {
+      background: var(--gray-100);
+      color: var(--navy)
+    }
+
+    .plan-box.premium .plan-label {
+      background: rgba(201, 161, 59, .2);
+      color: var(--gold-light)
+    }
+
+    .plan-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 4px
+    }
+
+    .plan-price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-bottom: 4px
+    }
+
+    .plan-price small {
+      font-size: .5em;
+      font-weight: 500;
+      color: var(--gray-600)
+    }
+
+    .plan-annual {
+      font-size: .85rem;
+      color: var(--gray-600);
+      margin-bottom: 24px
+    }
+
+    .plan-box.premium .plan-annual {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .plan-feat {
+      list-style: none;
+      margin-bottom: 32px
+    }
+
+    .plan-feat li {
+      padding: 8px 0;
+      font-size: .9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      border-bottom: 1px solid rgba(128, 128, 128, .15)
+    }
+
+    .plan-feat li::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0
+    }
+
+    .plan-box.premium .plan-feat li::before {
+      color: var(--gold-light)
+    }
+
+    .plan-guarantee {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: .82rem;
+      text-align: center
+    }
+
+    .plan-box.basic .plan-guarantee {
+      background: var(--gray-50);
+      color: var(--gray-600)
+    }
+
+    .plan-box.premium .plan-guarantee {
+      background: rgba(201, 161, 59, .12);
+      color: var(--gold-light)
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 4px 40px;
+      font-size: .7rem;
+      font-weight: 700;
+      transform: rotate(45deg);
+      letter-spacing: .05em
+    }
+
+    /* RESULTS */
+    .results {
+      padding: 80px 24px
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 32px 16px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white)
+    }
+
+    .stat-num {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      display: block
+    }
+
+    .stat-unit {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .7);
+      margin-top: 4px
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px
+    }
+
+    .case-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--gold)
+    }
+
+    .case-tag {
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 50px;
+      font-size: .7rem;
+      font-weight: 700;
+      background: var(--gray-100);
+      color: var(--navy);
+      margin-bottom: 12px
+    }
+
+    .case-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px
+    }
+
+    .case-amount {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold-dark)
+    }
+
+    .case-amount small {
+      font-size: .5em;
+      color: var(--gray-600);
+      font-weight: 500
+    }
+
+    /* SUBSIDY LIST */
+    .subsidy {
+      padding: 80px 24px;
+      background: var(--gray-50)
+    }
+
+    .subsidy-tabs {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px
+    }
+
+    .subsidy-tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid var(--gray-200);
+      background: var(--white);
+      transition: .3s
+    }
+
+    .subsidy-tab.active,
+    .subsidy-tab:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy)
+    }
+
+    .subsidy-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px
+    }
+
+    .subsidy-item {
+      display: none;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .06)
+    }
+
+    .subsidy-item.show {
+      display: block
+    }
+
+    .subsidy-item h4 {
+      font-size: .95rem;
+      margin-bottom: 4px
+    }
+
+    .subsidy-item .amount {
+      color: var(--gold-dark);
+      font-weight: 700;
+      font-size: .9rem
+    }
+
+    .subsidy-item p {
+      color: var(--gray-600);
+      font-size: .8rem;
+      margin-top: 4px
+    }
+
+    /* PLUS */
+    .plus {
+      padding: 80px 24px
+    }
+
+    .plus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px
+    }
+
+    .plus-card {
+      background: linear-gradient(135deg, var(--gray-50), var(--white));
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      border: 1px solid var(--gray-100)
+    }
+
+    .plus-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .plus-card p {
+      color: var(--gray-600);
+      font-size: .85rem
+    }
+
+    /* RECOMMEND */
+    .recommend {
+      padding: 80px 24px;
+      background: var(--gray-50)
+    }
+
+    .check-list {
+      max-width: 600px;
+      margin: 0 auto;
+      list-style: none
+    }
+
+    .check-list li {
+      padding: 14px 0;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--gray-200)
+    }
+
+    .check-list li::before {
+      content: '☑';
+      font-size: 1.2rem;
+      color: var(--gold-dark)
+    }
+
+    /* CTA */
+    .cta {
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      text-align: center
+    }
+
+    .cta h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 12px
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 32px;
+      font-size: .95rem
+    }
+
+    .company-info {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 2
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: .75rem;
+      color: var(--gray-600);
+      background: var(--gray-50)
+    }
+
+    /* OTHER COMPARE */
+    .vs {
+      padding: 80px 24px
+    }
+
+    .vs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: .88rem
+    }
+
+    .vs-table th,
+    .vs-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-200)
+    }
+
+    .vs-table thead th {
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 600
+    }
+
+    .vs-table thead th:first-child {
+      border-radius: var(--radius) 0 0 0
+    }
+
+    .vs-table thead th:last-child {
+      border-radius: 0 var(--radius) 0 0
+    }
+
+    .vs-table td:nth-child(2) {
+      color: var(--success);
+      font-weight: 600
+    }
+
+    .vs-table td:nth-child(3) {
+      color: var(--gray-600)
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        padding: 72px 16px 56px
+      }
+
+      .plan-wrapper {
+        grid-template-columns: 1fr
+      }
+
+      .stat-row {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      section {
+        padding: 56px 16px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">HJP Corporation ─ 認定経営革新等支援機関</div>
+      <h1>補助金、<span>取りこぼし</span>ていませんか？</h1>
+      <p>中小企業が毎年見逃す補助金・助成金の機会損失額</p>
+      <div class="hero-stat">200〜500<small>万円/年</small></div>
+      <p style="font-size:.9rem">TORERUNは月額定額で「情報提供→申請→採択後フォロー」まで<br>すべてワンストップでサポートする補助金取り放題サービスです</p>
+      <div class="hero-cta">
+        <a href="#plans" class="btn btn-gold">プランを見る ↓</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <div class="problem-cards">
+        <div class="problem-card fade-in">
+          <div class="icon">⏰</div>
+          <h3>いつもタイミングを逃す</h3>
+          <p>補助金は事業実施の4〜6ヶ月前から準備が必要。気づいた時にはもう遅い…</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="icon">📋</div>
+          <h3>どの補助金が使えるかわからない</h3>
+          <p>経産省・厚労省・自治体…種類が多すぎて自社に最適なものが見つけられない</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="icon">😩</div>
+          <h3>申請〜採択後の手続きが大変</h3>
+          <p>書類作成・交付申請・実績報告…他社では採択後のサポートがないケースも</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="service" id="service">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">TORERUNの3つの柱</h2>
+      <p class="section-sub">情報提供から採択後フォロー、さらに経営支援まで。<br>補助金に関わるすべてを月額定額でカバーします。</p>
+      <div class="service-grid">
+        <div class="service-card fade-in">
+          <div class="num">①</div>
+          <h3>情報提供</h3>
+          <p>毎月の定例ミーティングで年間投資計画を共有。経営会議に参加し最適な補助金を常に模索。LINE@でも随時配信。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="num">②</div>
+          <h3>申請サポート</h3>
+          <p>着手金0円・追加料金0円。申請〜採択後の交付申請・実績報告まで全工程をフルサポート。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="num">③</div>
+          <h3>認定計画</h3>
+          <p>成果報酬0円で各種認定計画の取得を支援。補助金の加点・助成率優遇・低利融資・税制優遇に。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VS OTHER -->
+  <section class="vs">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">他社との違い</h2>
+      <p class="section-sub">TORERUNは申請で終わりではありません。<br>採択後のアフターフォローまで全工程をカバーします。</p>
+      <table class="vs-table fade-in">
+        <thead>
+          <tr>
+            <th>サポート範囲</th>
+            <th>TORERUN</th>
+            <th>他社</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>申請書類作成</td>
+            <td>✓ 対応</td>
+            <td>✓ 対応</td>
+          </tr>
+          <tr>
+            <td>交付申請・交付決定</td>
+            <td>✓ 対応</td>
+            <td>✗ 非対応が多い</td>
+          </tr>
+          <tr>
+            <td>実績報告書類の提出</td>
+            <td>✓ 対応</td>
+            <td>✗ 非対応が多い</td>
+          </tr>
+          <tr>
+            <td>確定検査</td>
+            <td>✓ 対応</td>
+            <td>✗ 非対応が多い</td>
+          </tr>
+          <tr>
+            <td>5年間の事業化状況報告</td>
+            <td>✓ 対応</td>
+            <td>✗ 非対応が多い</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="compare" id="plans">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-sub">シンプルな月額定額制。支払い損はさせない保証制度付き。</p>
+      <div class="plan-wrapper">
+        <!-- TORERUN3 -->
+        <div class="plan-box basic fade-in">
+          <span class="plan-label">STANDARD</span>
+          <div class="plan-name">TORERUN3</div>
+          <div class="plan-price">3<small>万円/月</small></div>
+          <div class="plan-annual">年間コスト: 36万円</div>
+          <ul class="plan-feat">
+            <li>毎月の定例ミーティング（1時間）</li>
+            <li>着手金0円の申請サポート</li>
+            <li>交付申請〜実績報告までフルサポート</li>
+            <li>各種認定計画の無料取得支援</li>
+
+            <li>LINE@での補助金情報配信</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold" style="width:100%;justify-content:center">お問い合わせ</a>
+          <div class="plan-guarantee">🛡 12ヶ月以上ご利用で、獲得額が支払額(36万円)を下回った場合、差額分のチケットを進呈</div>
+        </div>
+        <!-- TORERUN5 -->
+        <div class="plan-box premium fade-in">
+          <div class="ribbon">おすすめ</div>
+          <span class="plan-label">PREMIUM</span>
+          <div class="plan-name">TORERUN5</div>
+          <div class="plan-price">5<small>万円/月</small></div>
+          <div class="plan-annual">年間コスト: 60万円</div>
+          <ul class="plan-feat">
+            <li>TORERUN3の全機能を含む</li>
+            <li>成果報酬への月額充当制度あり</li>
+            <li>より高度な経営支援</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold" style="width:100%;justify-content:center">お問い合わせ</a>
+          <div class="plan-guarantee">🛡 12ヶ月以上ご利用で、獲得額が支払額(60万円)を下回った場合、差額分のチケットを進呈</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">実績・数値で証明します</h2>
+      <div class="stat-row">
+        <div class="stat-box fade-in"><span class="stat-num" data-target="2000">0</span>
+          <div class="stat-unit">件以上の申請サポート</div>
+        </div>
+        <div class="stat-box fade-in"><span class="stat-num" data-target="69">0</span>
+          <div class="stat-unit">％ 通算採択率</div>
+        </div>
+        <div class="stat-box fade-in"><span class="stat-num" data-target="40">0</span>
+          <div class="stat-unit">億円以上の事業金額</div>
+        </div>
+        <div class="stat-box fade-in"><span class="stat-num" data-target="300">0</span>
+          <div class="stat-unit">件以上/年間受注</div>
+        </div>
+      </div>
+      <h3 style="text-align:center;margin-bottom:24px;font-size:1.1rem">業種別 年間獲得事例</h3>
+      <div class="case-grid">
+        <div class="case-card fade-in"><span class="case-tag">コンサル業／6名</span>
+          <h3>東京都 コンサルティング業</h3>
+          <div class="case-amount">711<small>万円/年</small></div>
+          <p style="font-size:.82rem;color:var(--gray-600);margin-top:8px">持続化補助金200万円・キャリアアップ助成金171万円・販路開拓120万円 他</p>
+        </div>
+        <div class="case-card fade-in"><span class="case-tag">飲食業／25名</span>
+          <h3>東京都 飲食業</h3>
+          <div class="case-amount">2,230<small>万円/年</small></div>
+          <p style="font-size:.82rem;color:var(--gray-600);margin-top:8px">事業再構築1,500万円・IT導入150万円・インバウンド160万円 他</p>
+        </div>
+        <div class="case-card fade-in"><span class="case-tag">製造業／55名</span>
+          <h3>東京都 製造業</h3>
+          <div class="case-amount">7,180<small>万円/年</small></div>
+          <p style="font-size:.82rem;color:var(--gray-600);margin-top:8px">事業再構築3,000万円・ものづくり1,250万円・躍進的設備投資2,500万円 他
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSIDY -->
+  <section class="subsidy" id="subsidy">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">対応可能な補助金例</h2>
+      <p class="section-sub">経産省・厚労省・東京都など多省庁に対応</p>
+      <div class="subsidy-tabs">
+        <button class="subsidy-tab active" data-cat="meti">経済産業省</button>
+        <button class="subsidy-tab" data-cat="mhlw">厚生労働省</button>
+        <button class="subsidy-tab" data-cat="tokyo">東京都</button>
+      </div>
+      <div class="subsidy-list">
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>中小企業省力化投資補助金</h4>
+          <p class="amount">最大1億円</p>
+          <p>スチコン、券売機、配膳ロボット、生産設備等</p>
+        </div>
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>デジタル化・AI導入補助金</h4>
+          <p class="amount">最大450万円</p>
+          <p>POSレジ、勤怠管理、会計ソフト等</p>
+        </div>
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>小規模事業者持続化補助金</h4>
+          <p class="amount">最大250万円</p>
+          <p>厨房機器、内装工事、広告宣伝等</p>
+        </div>
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>ものづくり補助金</h4>
+          <p class="amount">最大4,000万円</p>
+          <p>革新的製品の機械設備、システム開発等</p>
+        </div>
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>中小企業新事業進出補助金</h4>
+          <p class="amount">最大9,000万円</p>
+          <p>新製品開発・新市場開拓の多角化</p>
+        </div>
+        <div class="subsidy-item show" data-cat="meti">
+          <h4>中小企業成長加速化補助金</h4>
+          <p class="amount">最大5億円</p>
+          <p>売上高100億円以上を目指す企業向け</p>
+        </div>
+        <div class="subsidy-item" data-cat="mhlw">
+          <h4>キャリアアップ助成金</h4>
+          <p class="amount">40〜120万円</p>
+          <p>契約社員の正社員化等</p>
+        </div>
+        <div class="subsidy-item" data-cat="mhlw">
+          <h4>人材開発支援助成金</h4>
+          <p class="amount">最大1億円</p>
+          <p>リスキリング、DX訓練等の研修費</p>
+        </div>
+        <div class="subsidy-item" data-cat="mhlw">
+          <h4>働き方改革推進支援助成金</h4>
+          <p class="amount">最大730万円</p>
+          <p>労働時間短縮のための設備・ソフト等</p>
+        </div>
+        <div class="subsidy-item" data-cat="mhlw">
+          <h4>業務改善助成金</h4>
+          <p class="amount">最大600万円</p>
+          <p>賃上げ＋業務効率化の設備等</p>
+        </div>
+        <div class="subsidy-item" data-cat="tokyo">
+          <h4>躍進的な事業推進のための設備投資支援</h4>
+          <p class="amount">最大1億円</p>
+          <p>生産性向上、競争力向上の設備投資</p>
+        </div>
+        <div class="subsidy-item" data-cat="tokyo">
+          <h4>インバウンド対応力強化補助金</h4>
+          <p class="amount">最大1,000万円</p>
+          <p>多言語対応、トイレ洋式化等</p>
+        </div>
+        <div class="subsidy-item" data-cat="tokyo">
+          <h4>事業環境変化対応 経営基盤強化</h4>
+          <p class="amount">最大800万円</p>
+          <p>不動産賃借料、システム開発、広告等</p>
+        </div>
+        <div class="subsidy-item" data-cat="tokyo">
+          <h4>創業助成金</h4>
+          <p class="amount">最大400万円</p>
+          <p>賃借料、従業員人件費等（創業5年未満）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUS -->
+  <section class="plus">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">+α サービス</h2>
+      <p class="section-sub">補助金だけじゃない、経営を強くする支援メニュー</p>
+      <div class="plus-grid">
+        <div class="plus-card fade-in">
+          <h3>🤖 生成AI企業研修 <span style="color:var(--red);font-size:.7rem;font-weight:700">NEW</span></h3>
+          <p>ChatGPT、Gemini、Claude等の生成AIを活用した業務効率化研修。基礎講座のアーカイブ配信に加え、プランによって貴社課題に直結したカスタマイズ型の対話研修も提供。</p>
+        </div>
+        <div class="plus-card fade-in">
+          <h3>🏦 低利融資獲得支援</h3>
+          <p>制度融資活用、提携金融機関（西武信金・商工中金）紹介。認定計画を活用した優遇融資にも対応。</p>
+        </div>
+        <div class="plus-card fade-in">
+          <h3>📉 社会保険料削減</h3>
+          <p>提携社労士法人ロームホームとの連携で企業型確定拠出年金を活用。法人・個人双方の社保料を削減。</p>
+        </div>
+        <div class="plus-card fade-in">
+          <h3>📋 労務支援ライト</h3>
+          <p>月額+5,000円で就業規則・36協定の改訂、賃金台帳チェックなど。助成金の適正受給を支援。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMEND -->
+  <section class="recommend">
+    <div class="container">
+      <div class="gold-line"></div>
+      <h2 class="section-title">こんな企業におすすめ</h2>
+      <ul class="check-list fade-in">
+        <li>年間で事業投資（建物・設備・広告・システム・研修等）が100万円以上</li>
+        <li>採用計画がある</li>
+        <li>雇用保険加入の従業員が1名以上</li>
+        <li>グループ会社や関係会社がある</li>
+        <li>クライアントに補助金セールスを提供したい</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>貴社に最適な補助金活用プランを無料でご提案いたします</p>
+      <a href="mailto:info@hjp-corp.jp" class="btn btn-gold">お問い合わせはこちら →</a>
+      <div class="company-info">
+        株式会社HJP Corporation ｜ 東京都渋谷区千駄ヶ谷3-20-8<br>
+        経済産業省 認定経営革新等支援機関（第84号・108413003712）<br>
+        経済産業省 スマートSMEサポーター認定（第28号-23020022）
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:40px 24px;background:var(--gray-50);text-align:center">
+    <div class="container">
+      <h3 style="font-size:.95rem;color:var(--gray-600);margin-bottom:12px;letter-spacing:.1em">業務提携</h3>
+      <p style="font-size:.9rem;color:var(--gray-800);line-height:2">社会保険労務士法人ロームホーム<br>みしま行政書士事務所</p>
+    </div>
+  </section>
+
+  <footer>© HJP Corporation. All Rights Reserved.</footer>
+
+  <script>
+    // Fade-in on scroll
+    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) } }) }, { threshold: .15 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Counter animation
+    function animateCount(el, target) { let current = 0; const step = Math.max(1, Math.floor(target / 60)); const timer = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(timer) } el.textContent = current.toLocaleString() }, 25) }
+    const statObs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { const t = parseInt(e.target.dataset.target); animateCount(e.target, t); statObs.unobserve(e.target) } }) }, { threshold: .5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
+
+    // Subsidy tabs
+    document.querySelectorAll('.subsidy-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.subsidy-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.dataset.cat;
+        document.querySelectorAll('.subsidy-item').forEach(item => {
+          item.classList.toggle('show', item.dataset.cat === cat);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
